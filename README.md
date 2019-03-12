@@ -56,12 +56,16 @@ Configure the JSON/ltos-add-USER.json file settings:
 
 Execute the python script as follows:
 
-
 ```
 ]$ python pySetVOEntitlements.py
+[.] Set VO membership information for a given EGI ID
+[ Request ] = https://aai.egi.eu/api/v1/VoMembers
+[ Payload ] = {u'RequestType': u'VoMembers', u'Version': u'1.0', u'VoMembers': [{u'Status': u'Active', u'VoId': u'vo.access.egi.eu', u'Person': {u'Type': u'CO', u'Id': u'012345689[..]@egi.eu'}, u'Version': u'1.0', u'ValidThrough': u'2020-03-11', u'ValidFrom': u'2019-03-11'}]}
+
+[ Response ]
+- {u'message': [{u'status': u'Active', u'vo_id': u'vo.access.egi.eu', u'valid_from': u'2019-03-10T22:00:00.000Z', u'valid_through': u'2020-03-10T22:00:00.000Z', u'epuid': u'0123456789[..]@egi.eu', u'id': 93}], u'code': u'InvalidFields'}
+- [{u'status': u'Active', u'vo_id': u'vo.access.egi.eu', u'valid_from': u'2019-03-10T22:00:00.000Z', u'valid_through': u'2020-03-10T22:00:00.000Z', u'epuid': u'0123456789[..]@egi.eu', u'id': 93}]
 ```
-
-
 
 * Retrieving the VO membership information for a given EGI ID:
 
