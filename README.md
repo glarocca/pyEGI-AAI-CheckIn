@@ -11,10 +11,10 @@ The REST client is authenticated via username/password credentials transmitted o
 
 ## Methods:
 * Adding a user to a VO requires:
-** Specifying the user’s EGI ID, 
-** The name of the VO ("vo.access.egi.eu" in the case of the EGI AoDs), 
-** The status ("Active"), and 
-** The valid from/through dates. 
+**Specifying the user’s EGI ID, 
+**The name of the VO ("vo.access.egi.eu" in the case of the EGI AoDs), 
+**The status ("Active"), and 
+**The valid from/through dates. 
 
 All these parameters are mandatory. Here is an example using curl (see attached ltos-add-USER.json file):
 
