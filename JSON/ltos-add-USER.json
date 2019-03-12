@@ -1,0 +1,17 @@
+{
+  "RequestType": "VoMembers",
+  "Version": "1.0",
+  "VoMembers": [
+    {
+      "Version": "1.0",
+      "VoId": "vo.access.egi.eu",
+      "Person": {
+        "Type": "CO",
+        "Id": "<ADD HERE THE UNIQUE PERSISTENT EGI ID FOR THE USER>" 
+      },
+      "Status": "Active",
+      "ValidFrom": "2019-01-01",
+      "ValidThrough": "2020-12-31"
+    }
+  ]
+}
