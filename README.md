@@ -5,6 +5,7 @@
 * Membership should be limited to the specified period.
 * Different membership status values should be supported, namely 'Active', 'Expired', 'Deleted'.
 * CheckIn should automatically change the membership status from 'Active' to 'Expired' beyond the validity period.
+* Python 2.7.12+
 
 ## Authentication:
 The REST client is authenticated via username/password credentials transmitted over HTTPS using the Basic Authentication scheme. More sophisticated authentication mechanisms, such as OpenID Connect/OAuth 2.0 access tokens, may be supported in the future.
