@@ -16,20 +16,22 @@ The REST client is authenticated via username/password credentials transmitted o
 * The status ("Active"), and 
 * The valid from/through dates. 
 
-All these parameters are mandatory. Here is an example using curl (see attached ltos-add-USER.json file):
+All these parameters are mandatory. 
 
-```
-]$ curl -vX POST https://aai.egi.eu.eu/api/v1/VoMembers \
-  -user "example-client":"veryverysecret" \
-  --data @ltos-add-USER.json \
-  --header "Content-Type: application/json"
-```
 Use the setVOMembership(login, password, url) method to add the user to the VO:
 
-
 ```
+login = "*****"
+password = "******"
+url = "https://aai.egi.eu/api/v1/VoMembers"
+
 # Configure here and add the user's unique, non-reassignable, persistent pseudonymous EGI ID
 EGI_ID = "<EGI_user_ID>" # e.g.: <ASCII>@egi.eu
+[..]
+
+def main():
+  # Set the VO memberships for a given EGI ID
+  setVOMembership(login, password, url)
 ```
 
 Configure the JSON/ltos-add-USER.json file settings:
@@ -77,16 +79,4 @@ Execute the python script as follows:
 ```
 Beyond the valid_through date, the status will be automatically changed to "Expired". So, when querying for VO membership information, it’s important to check that the status is actually set to "Active", and of course that the vo_id equals "vo.access.egi.eu".
 
-* Updating existing VO membership record:
-
-```
-curl -vX PUT https://aai.egi.eu.eu/api/v1/VoMembers \
-  --user "example-client":"veryverysecret"  \
-  --data @ltos-add.json \
-  --header "Content-Type: application/json"
-```
-
-The request body is the same as the one used for adding new members but update requires using PUT instead of POST.
-
-* Removing VO member:
-Same as the update but requires setting the membership status to "Deleted"
+You can also check the VO membership information usign the getVOMembership() method.
