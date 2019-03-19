@@ -54,8 +54,8 @@ def setVOMembership(login, password, url):
 
         print ("\n[ Response ]")
         print ("- %s" %data)
-        print ("- %s" %data["message"])
-        print ("- %s" %data["code"])
+        #print ("- %s" %data["message"])
+        #print ("- %s" %data["code"])
 
 
 def main():
