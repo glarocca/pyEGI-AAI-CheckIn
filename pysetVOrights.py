@@ -42,23 +42,23 @@ def main():
         "User configuration file: ./JSON/user.json\n",
         formatter_class=RawTextHelpFormatter
     )
-    
+
     group = parser.add_mutually_exclusive_group(required=True)
-    
+
     group.add_argument(
         "-g",
         "--get",
         action="store_true",
         help="Get VO membership information for a given EGI ID",
     )
-    
+
     group.add_argument(
         "-s",
         "--set",
         action="store_true",
         help="Set VO membership for a given EGI ID",
     )
-    
+
     group.add_argument(
         "-u",
         "--update",
@@ -66,28 +66,29 @@ def main():
         help="Update VO membership for a given EGI ID",
     )
     args = parser.parse_args()
-    
+
     with open('./JSON/config.json') as config_file:
         config_data = json.load(config_file)
         login = config_data["login"]
         password = config_data["password"]
         url = config_data["url"]
-    
+
     with open('./JSON/user.json') as user_file:
         user_data = json.load(user_file)
-    
+
     #print ("[ Request ] = %s" %url)
     #print ("[ Payload ] = %s" %user_data)
-    
+
     if args.get:
         url = url + "/%s" % (user_data["VoMembers"][0]["Person"]["Id"])
         getVOMembership(login, password, url, user_data)
-    
+
     if args.set:
         setVOMembership(login, password, url, user_data)
-    
+
     if args.update:
         updateVOMembership(login, password, url, user_data)
-   
+
+
 if __name__ == "__main__":
     main()
