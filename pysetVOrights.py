@@ -3,6 +3,7 @@
 import requests
 import json
 import argparse
+from argparse import RawTextHelpFormatter
 from pprint import pprint
 
 def getVOMembership(login, password, url):
@@ -34,9 +35,10 @@ def main():
    pass
 
 parser = argparse.ArgumentParser(
-    description="Visualize and modify user's VO membership information"
-    "Configuration file: ./JSON/config.json"
-    "User configuration file: ./JSON/user.json"
+    description="Visualize and modify user's VO membership information\n"
+    "Configuration file: ./JSON/config.json\n"
+    "User configuration file: ./JSON/user.json\n",
+    formatter_class=RawTextHelpFormatter
   )
 
 group = parser.add_mutually_exclusive_group(required=True)
