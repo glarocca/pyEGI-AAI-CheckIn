@@ -84,8 +84,8 @@ Beyond the `valid_through` date, the status will be automatically changed to `Ex
 You can also check the VO membership information usign the APIs:
 
 ```bash
-$ curl -vX GET https://aai.egi.eu.eu/api/v1/VoMembers/01234567890123456789@egi.eu \
-  -user "example-client":"veryverysecret"
+$ curl -vX GET https://aai.egi.eu/api/v1/VoMembers/01234567890123456789@egi.eu \
+  --user "example-client":"veryverysecret"
 
 {"id":85,"epuid":"01234567890123456789@egi.eu","vo_id":"vo.access.egi.eu","valid_from":"2017-05-20T22:00:00.000Z","valid_through":"2017-06-21T22:00:00.000Z","status":"Active"}
 ```
